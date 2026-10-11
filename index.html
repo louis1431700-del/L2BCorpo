@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nomora | Générateur de nom, logo & identité de marque gratuit</title>
+<meta name="description" content="Créez le nom, le logo, le slogan et l'identité visuelle de votre entreprise en 1 clic. Studio de logo, maquettes et téléchargement PNG/SVG.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Syne:wght@700;800&family=Playfair+Display:wght@700&family=Space+Grotesk:wght@700&family=Fredoka:wght@600&family=Cormorant+Garamond:wght@700&family=Montserrat:wght@800&family=Bebas+Neue&family=Pacifico&family=Archivo+Black&family=DM+Serif+Display&family=Righteous&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="aurora"><span></span><span></span><span></span></div>
+
+<header class="nav wrap">
+  <a href="#" class="logo">Nomora<b>.</b></a>
+  <nav>
+    <a href="#generateur">Générateur</a>
+    <a href="#studio">Studio</a>
+    <a href="#tarifs">Tarifs</a>
+    <a href="#favoris">Favoris <span id="favCount" class="badge">0</span></a>
+  </nav>
+</header>
+
+<section class="hero wrap">
+  <p class="pill">✨ 100% gratuit pour commencer</p>
+  <h1>Votre marque va <span id="rotate">décoller</span></h1>
+  <p class="sub">Nom, logo, slogan, couleurs et maquettes générés en 1 clic. Trouvez l'identité parfaite pour votre entreprise en moins de 60 secondes.</p>
+  <a href="#generateur" class="btn big">Créer ma marque →</a>
+  <div class="stats"><div><b>12</b><span>polices</span></div><div><b>14</b><span>symboles</span></div><div><b>4</b><span>maquettes</span></div><div><b>∞</b><span>idées</span></div></div>
+</section>
+
+<section id="generateur" class="wrap section">
+  <h2>🧠 Générateur de noms</h2>
+  <div class="panel">
+    <div class="row">
+      <input id="kw" placeholder="Votre activité ou mot-clé (ex : café, sport, tech...)" maxlength="24">
+      <select id="style">
+        <option value="mix">Style : Mixte</option>
+        <option value="tech">Tech / Moderne</option>
+        <option value="luxe">Luxe / Élégant</option>
+        <option value="fun">Fun / Cool</option>
+        <option value="nature">Nature / Bio</option>
+        <option value="court">Court & percutant</option>
+      </select>
+      <button class="btn" id="go">Générer 18 noms</button>
+    </div>
+  </div>
+  <div id="grid" class="grid"></div>
+</section>
+
+<section id="studio" class="wrap section">
+  <h2>🎨 Studio de logo</h2>
+  <div class="studio">
+    <div class="controls panel">
+      <label>Nom<input id="sName" value="Nomora"></label>
+      <label>Slogan<input id="sTag" value="Votre marque, en un clic"></label>
+      <label>Police<select id="sFont"></select></label>
+      <label>Forme<select id="sShape"><option value="circle">Cercle</option><option value="square">Carré arrondi</option><option value="hex">Hexagone</option><option value="diamond">Losange</option><option value="blob">Goutte</option><option value="none">Aucune</option></select></label>
+      <label>Symbole<select id="sIcon"></select></label>
+      <label>Disposition<select id="sLayout"><option value="h">Horizontale</option><option value="v">Verticale</option></select></label>
+      <div class="two">
+        <label>Couleur 1<input type="color" id="c1" value="#8b5cf6"></label>
+        <label>Couleur 2<input type="color" id="c2" value="#ec4899"></label>
+      </div>
+      <div class="palettes" id="palettes"></div>
+      <button class="btn ghost" id="rand">🎲 Design aléatoire</button>
+      <button class="btn ghost" id="fav">❤️ Sauvegarder en favori</button>
+    </div>
+    <div class="preview">
+      <div class="canvasBox"><canvas id="cv" width="900" height="420"></canvas></div>
+      <div class="score"><span>Score du nom</span><div class="bar"><i id="scoreBar"></i></div><b id="scoreTxt">0/100</b></div>
+      <div class="actions">
+        <button class="btn" id="dlPng">⬇ PNG (gratuit)</button>
+        <button class="btn ghost" id="dlSvg">⬇ SVG vectoriel (Pro)</button>
+        <button class="btn ghost" id="share">🔗 Copier le lien</button>
+        <a class="btn ghost" id="domain" target="_blank" rel="noopener">🌐 Vérifier le domaine</a>
+      </div>
+      <h3>Maquettes</h3>
+      <div class="mockups">
+        <div class="mk card1"><canvas id="m1" width="420" height="240"></canvas><span>Carte de visite</span></div>
+        <div class="mk"><canvas id="m2" width="300" height="300"></canvas><span>Post Instagram</span></div>
+        <div class="mk"><canvas id="m3" width="420" height="260"></canvas><span>Site web</span></div>
+        <div class="mk"><canvas id="m4" width="300" height="300"></canvas><span>T-shirt</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs" class="wrap section">
+  <h2>💎 Tarifs</h2>
+  <div class="plans">
+    <div class="plan"><h3>Gratuit</h3><p class="price">0 €</p><ul><li>Générateur illimité</li><li>Studio de logo</li><li>PNG avec filigrane</li><li>Favoris</li></ul><a href="#generateur" class="btn ghost">Commencer</a></div>
+    <div class="plan hot"><em>Populaire</em><h3>Kit Pro</h3><p class="price">19 €</p><ul><li>PNG haute définition sans filigrane</li><li>SVG vectoriel</li><li>Toutes les maquettes</li><li>Usage commercial</li></ul><a href="#" data-pay="kit" class="btn">Débloquer le Kit Pro</a></div>
+    <div class="plan"><h3>Agence</h3><p class="price">49 €</p><ul><li>Tout le Kit Pro</li><li>Charte graphique complète</li><li>3 variantes de logo</li><li>Support prioritaire</li></ul><a href="#" data-pay="agence" class="btn ghost">Choisir Agence</a></div>
+  </div>
+  <p class="note">💡 Remplacez les liens de paiement dans <code>app.js</code> (objet CONFIG) par vos liens Stripe / PayPal.</p>
+</section>
+
+<section id="favoris" class="wrap section">
+  <h2>❤️ Vos favoris</h2>
+  <div id="favList" class="grid"></div>
+  <button class="btn ghost" id="exportCsv">Exporter en CSV</button>
+</section>
+
+<section class="wrap section news">
+  <h2>📬 Recevez des idées de marques chaque semaine</h2>
+  <form id="nl" class="row"><input type="email" id="nlMail" placeholder="votre@email.com" required><button class="btn">S'abonner</button></form>
+  <a id="tip" class="btn ghost">☕ Soutenir Nomora</a>
+</section>
+
+<footer class="wrap foot">© <span id="year"></span> Nomora · L2BCorpo — Tous droits réservés</footer>
+
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
